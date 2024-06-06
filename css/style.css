@@ -33,21 +33,22 @@ img{
     object-position: center;
 }
 
-/* footer{
+footer, nav {
     background-color: brown;
     color: white;
 }
 
-nav{
-    background-color: brown;
-    color: white;
-} */
- /* main{
+
+
+main{
     background-color: peachpuff;
- } */
+ }
 /* text align center */
 
 :is(h2, footer p){
     text-align: center;
 }
 
+.card{
+    width: 18rem;
+}
