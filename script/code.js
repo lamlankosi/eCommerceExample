@@ -1,4 +1,5 @@
 //  create product and storage on the local storage
+
 let wrapper = document.querySelector('[recentProducts]')
 let products =
           JSON.parse(localStorage.getItem('products')) ? JSON.parse(localStorage.getItem('products')) : localStorage.setItem('products', JSON.stringify(
@@ -47,19 +48,25 @@ let products =
           ))
 
 function recentProducts() {
-    let arrSize = products.length
-    let latestProducts = products.reverse().slice(0, arrSize >> 1)
-    latestProducts.forEach(products => {
-        wrapper.innerHTML += 
-                `<div class="card"">
-                <img src="${products.img_url}" class="card-img-top" alt="..." loading="lazy">
-                <div class="card-body">
-                <h5 class="card-title">${products.productName}</h5>
-                <p class="card-text">${products.description}</p>
-                
-                </div>
-            </div>`
-    });
+
+    try{
+        let arrSize = products.length
+        let latestProducts = products.reverse().slice(0, arrSize >> 1)
+        latestProducts.forEach(products => {
+            wrapper.innerHTML += 
+                    `<div class="card"">
+                    <img src="${products.img_url}" class="card-img-top" alt="..." loading="lazy">
+                    <div class="card-body">
+                    <h5 class="card-title">${products.productName}</h5>
+                    <p class="card-text">${products.description}</p>
+                    
+                    </div>
+                </div>`
+        });
+    
+    }catch (e){
+        wrapper.textContent = "Please contact our administrator"
+    }
 }
 
 recentProducts()
