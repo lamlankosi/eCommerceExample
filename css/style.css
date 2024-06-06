@@ -24,3 +24,8 @@ img{
     object-fit: cover;
     object-position: center;
 }
+
+footer {
+    background-color: brown;
+    color: white;
+}
