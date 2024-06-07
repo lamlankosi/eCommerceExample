@@ -65,8 +65,19 @@ function recentProducts() {
         });
     
     }catch (e){
-        wrapper.textContent = "Please contact our administrator"
+        wrapper.textContent = "Please contact our administrator @lamlanomnganga9@gmail.com"
+
+        setTimeout(()=>{
+          location.reload()
+        },
+
+        2000
+      )
     }
 }
 
 recentProducts()
+
+//currentyear
+document.querySelector('[currentYear]').textContent = new Date().getUTCFullYear()
+
